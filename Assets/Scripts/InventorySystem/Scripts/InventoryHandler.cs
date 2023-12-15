@@ -17,6 +17,7 @@ public class InventoryHandler : MonoBehaviour
     #region Events
 
     public Action<ItemData> OnNewItemAddedEvent;
+    public Action<ItemData> OnItemRemovedEvent;
 
     #endregion
 
@@ -36,7 +37,7 @@ public class InventoryHandler : MonoBehaviour
 
     private void Awake()
     {
-        currentInventory.SetInventory(new List<ItemData>());
+        //currentInventory.SetInventory(new List<ItemData>());
     }
 
     #endregion

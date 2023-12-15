@@ -400,7 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 8296172669380533197}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -685,6 +686,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Renderer: {fileID: 1344436494}
   m_MaterialIndex: 0
+--- !u!114 &287189913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7570909899104841704, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
+  m_PrefabInstance: {fileID: 1825262782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8f36fcd64c19c44aa799444093f645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &333171545
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +928,7 @@ GameObject:
   - component: {fileID: 495570300}
   - component: {fileID: 495570296}
   - component: {fileID: 495570299}
+  - component: {fileID: 495570298}
   m_Layer: 0
   m_Name: DropBoxC
   m_TagString: Untagged
@@ -1134,6 +1147,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &495570298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495570294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d79b3960774634e9d47e4baa63ad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItemId: 5
+  dropBoxData: {fileID: 11400000, guid: f1a66d0c934c3d642b50b6693ab5b995, type: 2}
 --- !u!114 &495570299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,6 +1422,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8208046277473148879, guid: 68a21580b36613649840aced0116d2f2, type: 3}
   m_PrefabInstance: {fileID: 604155925}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &612883438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6677271103218215597, guid: 68a21580b36613649840aced0116d2f2, type: 3}
+  m_PrefabInstance: {fileID: 1821416413}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &654217171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2340,6 +2378,7 @@ GameObject:
   - component: {fileID: 1344436497}
   - component: {fileID: 1344436493}
   - component: {fileID: 1344436496}
+  - component: {fileID: 1344436495}
   m_Layer: 0
   m_Name: DropBox A
   m_TagString: Untagged
@@ -2558,6 +2597,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1344436495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344436491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d79b3960774634e9d47e4baa63ad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItemId: 5
+  dropBoxData: {fileID: 11400000, guid: bb5d0033bafdb694da40f1a5e6dd2453, type: 2}
 --- !u!114 &1344436496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2627,6 +2680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390030157}
+  - component: {fileID: 1390030158}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -2651,6 +2705,32 @@ Transform:
   m_Father: {fileID: 1783572214}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390030158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390030156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47854a21d9d73d94493fe4f95da07a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isOpen: 0
+  _openDuration: 10
+  _closeDuration: 10
+  _wall:
+  - Transform: {fileID: 5822306973093541262}
+    ClosePosition: {x: -4.78, y: 0.96, z: 2}
+    CloseRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+    OpenPosition: {x: -4.78, y: 0.96, z: 5.374}
+    OpenRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
+  - Transform: {fileID: 219964909}
+    ClosePosition: {x: -4.78, y: 0.96, z: -2}
+    CloseRotation: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
+    OpenPosition: {x: -4.78, y: 0.96, z: -5.56}
+    OpenRotation: {x: 0, y: 0.70710677, z: 0, w: -0.70710677}
 --- !u!1 &1407816928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3125,7 @@ GameObject:
   - component: {fileID: 1621681511}
   - component: {fileID: 1621681507}
   - component: {fileID: 1621681510}
+  - component: {fileID: 1621681509}
   m_Layer: 0
   m_Name: DropBox B
   m_TagString: Untagged
@@ -3263,6 +3344,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1621681509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621681505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d79b3960774634e9d47e4baa63ad06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItemId: 5
+  dropBoxData: {fileID: 11400000, guid: fff0bc826e62acf43add94fc8be952e9, type: 2}
 --- !u!114 &1621681510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,6 +3453,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1708317750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7917441988664295401, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
+  m_PrefabInstance: {fileID: 1825262782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1760839253 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3462571325970164595, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
@@ -3473,7 +3573,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 3.3726883e-19}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.0377245e-18}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -3827,7 +3927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2607312474088619353, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
       propertyPath: m_MaxRaycastDistance
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2736478854845186207, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
       propertyPath: m_EnableFly
@@ -3843,7 +3943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853412522427425234, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
       propertyPath: m_MaxRaycastDistance
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156393, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
       propertyPath: m_Enabled
@@ -4037,6 +4137,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3512545343240810187, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
+      propertyPath: _inventoryHandler
+      value: 
+      objectReference: {fileID: 287189913}
     - target: {fileID: 3947490360915887964, guid: 7c323ca0522bf6f46999bb3f795c2a28, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4226,9 +4330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5be841b00b16eb4882a754a70a6edae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryHandler: {fileID: 0}
+  _inventoryHandler: {fileID: 287189913}
   _origin: {fileID: 1920599014}
   _teleportationProvider: {fileID: 1048020199}
+  _UIInventoryObject: {fileID: 1708317750}
 --- !u!65 &1952388188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4895,7 +5000,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296172669380533193}
-  m_Mesh: {fileID: 4068373912626513877, guid: 2942006eca116464bb37a3aed236cdb9, type: 3}
+  m_Mesh: {fileID: 2540817853737639666, guid: 95a76ff3d2d3f16488057e76f34201bc, type: 3}
 --- !u!4 &4144580407796625955
 Transform:
   m_ObjectHideFlags: 0
@@ -5243,10 +5348,11 @@ GameObject:
   - component: {fileID: 5006512735151581658}
   - component: {fileID: 4044710140918813676}
   - component: {fileID: 7718390322663337749}
-  - component: {fileID: 8296172669380533194}
   - component: {fileID: 239857490}
   - component: {fileID: 239857489}
   - component: {fileID: 8296172669380533195}
+  - component: {fileID: 8296172669380533196}
+  - component: {fileID: 8296172669380533197}
   m_Layer: 0
   m_Name: The Sphere
   m_TagString: Untagged
@@ -5254,19 +5360,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &8296172669380533194
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172669380533193}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01, z: 0.01}
-  m_Center: {x: 0, y: -0.000000007450581, z: 6.9849193e-10}
 --- !u!114 &8296172669380533195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5290,6 +5383,106 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &8296172669380533196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172669380533193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1eec0a663460b41a8618841cf905e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemData:
+    ItemId: 5
+    ItemName: The Stone
+    ItemDescription: Ancient relic lightens coffins with engraved symbols and serene
+      energy, easing the journey to the afterlife.
+    ItemImage: {fileID: 21300000, guid: edb7d93ccf24cad419669de6677f17e2, type: 3}
+    TooltipText: A stone to lift coffin
+    ItemType: 1
+  moveToPlayerDuration: 0.75
+  moveToPlayerDistanceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moveToPlayerScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -3.3840659
+      outSlope: -3.3840659
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.12140484
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.015804084
+      outSlope: 0.015804084
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14923298
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  tooltipText: {fileID: 612883438}
+  collider: {fileID: 8296172669380533197}
+  interactable: {fileID: 239857489}
+  OnItemCollected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1390030158}
+        m_TargetAssemblyTypeName: MovingWallHandler, WallSystem
+        m_MethodName: OpenWall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!135 &8296172669380533197
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172669380533193}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0049921134
+  m_Center: {x: 9.313226e-10, y: 0, z: -6.9849193e-10}
 --- !u!23 &8877482608098300272
 MeshRenderer:
   m_ObjectHideFlags: 0

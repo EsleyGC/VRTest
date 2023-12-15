@@ -12,6 +12,7 @@ public class PlayerHandler : MonoBehaviour
     [SerializeField] private InventoryHandler _inventoryHandler;
     [SerializeField] private XROrigin _origin;
     [SerializeField] private TeleportationProvider _teleportationProvider;
+    [SerializeField] private GameObject _UIInventoryObject;
 
     #endregion
 
@@ -34,6 +35,9 @@ public class PlayerHandler : MonoBehaviour
     private void OnNewItemAdded(ItemData itemData)
     {
         CheckpointManager.Instance.SaveNewCheckpoint(Camera.main.transform, _inventoryHandler.GetAllItems());
+        
+        if(!_UIInventoryObject.activeSelf)
+            _UIInventoryObject.SetActive(true);
     }
 
     private void SetNewInventory(List<ItemData> newItems)
