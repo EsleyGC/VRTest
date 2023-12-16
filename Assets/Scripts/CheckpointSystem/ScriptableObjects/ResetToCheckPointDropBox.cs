@@ -7,7 +7,7 @@ public class ResetToCheckPointDropBox : DropBoxData
 {
     #region Methods
 
-    public override void StartDropBoxEffect()
+    public override void StartDropBoxEffect(Transform parentTransform)
     {
         CheckpointManager.Instance.CallLastCheckPoint();
     }

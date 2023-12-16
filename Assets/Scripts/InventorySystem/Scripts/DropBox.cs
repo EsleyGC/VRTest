@@ -6,17 +6,11 @@ public class DropBox : MonoBehaviour
 {
     #region Variables
 
+    [SerializeField] private bool requireItem;
     [SerializeField] private int requiredItemId;
+    [SerializeField] private Transform transformRef;
     [SerializeField] private DropBoxData dropBoxData;
-
-    #endregion
-    
-    #region Messages
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioSource audioSource;
 
     #endregion
 
@@ -24,15 +18,22 @@ public class DropBox : MonoBehaviour
 
     public void TryOpenBox(Inventory inventory)
     {
-        if (!inventory.HasItem(requiredItemId))
-            return;
-        
+        if (requireItem)
+        {
+            if (!inventory.HasItem(requiredItemId))
+                return;
+
+            inventory.RemoveItem(requiredItemId);
+        }
+
         OpenBox();
     }
 
     private void OpenBox()
     {
-        dropBoxData.StartDropBoxEffect();
+        audioSource.clip = dropBoxData.openSound;
+        audioSource.Play();
+        dropBoxData.StartDropBoxEffect(transformRef ? transformRef : transform);
     }
 
     #endregion

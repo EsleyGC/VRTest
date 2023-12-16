@@ -27,17 +27,16 @@ public class InventoryHandler : MonoBehaviour
     {
         rightInteractor.selectEntered.AddListener(OnSelectObject);
         leftInteractor.selectEntered.AddListener(OnSelectObject);
+        currentInventory.OnItemAddedEvent += OnItemAdded;
+        currentInventory.OnItemRemovedEvent += OnItemRemoved;
     }
 
     private void OnDisable()
     {
         rightInteractor.selectEntered.RemoveListener(OnSelectObject);
         leftInteractor.selectEntered.RemoveListener(OnSelectObject);
-    }
-
-    private void Awake()
-    {
-        //currentInventory.SetInventory(new List<ItemData>());
+        currentInventory.OnItemAddedEvent -= OnItemAdded;
+        currentInventory.OnItemRemovedEvent -= OnItemRemoved;
     }
 
     #endregion
@@ -59,7 +58,6 @@ public class InventoryHandler : MonoBehaviour
         if (args.interactableObject.transform.TryGetComponent(out ItemObject newItem))
         {
             currentInventory.AddItem(newItem);
-            OnNewItemAddedEvent?.Invoke(newItem.ItemData);
             newItem.HandleGetItem(args.interactorObject.transform);
         }
 
@@ -67,6 +65,16 @@ public class InventoryHandler : MonoBehaviour
         {
             newDropBox.TryOpenBox(currentInventory);
         }
+    }
+
+    private void OnItemAdded(ItemData itemData)
+    {
+        OnNewItemAddedEvent?.Invoke(itemData);
+    }
+
+    private void OnItemRemoved(ItemData itemData)
+    {
+        OnItemRemovedEvent?.Invoke(itemData);
     }
 
     #endregion

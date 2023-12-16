@@ -10,6 +10,7 @@ public class MovingWallHandler : MonoBehaviour
     [SerializeField] private float _openDuration;
     [SerializeField] private float _closeDuration;
     [SerializeField] private MovingWallData[] _wall;
+    [SerializeField] private AudioSource _audioSource;
 
     private IEnumerator _changeWallStateRoutine;
 
@@ -38,6 +39,8 @@ public class MovingWallHandler : MonoBehaviour
             return;
 
         _isOpen = open;
+        
+        _audioSource.Play();
         
         if (_changeWallStateRoutine != null)
             StopCoroutine(_changeWallStateRoutine);

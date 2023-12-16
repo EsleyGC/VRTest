@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aaf809c34a0ac0489951dbbb378e2d2, type: 3}
   m_Name: ResetToCheckPointDropBox
   m_EditorClassIdentifier: 
+  openSound: {fileID: 8300000, guid: 2beefd338ad05744580b2f033add72a4, type: 3}

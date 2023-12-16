@@ -7,17 +7,23 @@ public class SpawnParticleDropBox : DropBoxData
 {
     #region Variables
 
-    public ParticleSystem particleToSpawn;
+    public GameObject particleToSpawn;
     public string textToShow;
 
     #endregion
 
     #region Methods
 
-    public override void StartDropBoxEffect()
+    public override void StartDropBoxEffect(Transform parentTransform)
     {
-        if (particleToSpawn)
-            particleToSpawn.Play();
+        if (!particleToSpawn)
+            return;
+        
+        //TODO: Create a pooling system for the particles.
+        
+        Instantiate(particleToSpawn, parentTransform);
+        
+        ModalTextsHandler.RequestModalText(textToShow);
     }
 
     #endregion

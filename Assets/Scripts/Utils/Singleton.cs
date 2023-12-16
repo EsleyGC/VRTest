@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 public abstract class Singleton<T> where T : Singleton<T>, new()
 {
     #region Fields
@@ -40,7 +42,7 @@ public abstract class Singleton<T> where T : Singleton<T>, new()
         instance.Clear();
         instance = default(T);
     }
-
+    
     protected void Init()
     {
         OnInit();
@@ -50,7 +52,7 @@ public abstract class Singleton<T> where T : Singleton<T>, new()
     {
         OnClear();
     }
-
+    
     protected virtual void OnInit()
     {
     }

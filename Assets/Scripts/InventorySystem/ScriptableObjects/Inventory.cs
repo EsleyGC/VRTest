@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class Inventory : ScriptableObject
 
     #endregion
 
+    #region Events
+
+    public event Action<ItemData> OnItemAddedEvent;
+    public event Action<ItemData> OnItemRemovedEvent;
+
+    #endregion
+
     #region Methods
 
     public bool HasItem(int itemId)
@@ -21,24 +29,32 @@ public class Inventory : ScriptableObject
     public void AddItem(ItemObject itemObject)
     {
         _items.Add(itemObject.ItemData);
+        OnItemAddedEvent?.Invoke(itemObject.ItemData);
     }
 
     public void RemoveItem(ItemObject itemObject)
     {
+        if (!_items.Contains(itemObject.ItemData))
+            return;
+        
         _items.Remove(itemObject.ItemData);
+        OnItemRemovedEvent?.Invoke(itemObject.ItemData);
     }
 
     public void RemoveItem(int itemId)
     {
         var itemToRemove = _items.Find(item => item.ItemId == itemId);
 
-        if (_items.Contains(itemToRemove))
-            _items.Remove(itemToRemove);
+        if (!_items.Contains(itemToRemove))
+            return;
+        
+        _items.Remove(itemToRemove);
+        OnItemRemovedEvent?.Invoke(itemToRemove);
     }
 
     public void SetInventory(List<ItemData> newItems)
     {
-        _items = newItems;
+        _items = new List<ItemData>(newItems);
     }
 
     public List<ItemData> GetAllItems()

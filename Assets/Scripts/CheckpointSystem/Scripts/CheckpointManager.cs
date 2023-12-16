@@ -21,10 +21,16 @@ public class CheckpointManager : Singleton<CheckpointManager>
     #endregion
 
     #region Methods
+    
+    protected override void OnInit()
+    {
+        base.OnInit();
+        checkpoints = new List<CheckpointData>();
+    }
 
     public void SaveNewCheckpoint(Transform playerTransform, List<ItemData> itemsToSave)
     {
-        var newCheckpoint = new CheckpointData(playerTransform.position, itemsToSave);
+        var newCheckpoint = new CheckpointData(playerTransform.position, new List<ItemData>(itemsToSave));
         checkpoints.Add(newCheckpoint);
     }
 

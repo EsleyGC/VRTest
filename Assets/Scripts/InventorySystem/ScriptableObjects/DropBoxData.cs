@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class DropBoxData : ScriptableObject
 {
-    public abstract void StartDropBoxEffect();
+    public AudioClip openSound;
+    public abstract void StartDropBoxEffect(Transform parent);
 }

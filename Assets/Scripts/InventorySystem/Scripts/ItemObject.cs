@@ -23,6 +23,8 @@ public class ItemObject : MonoBehaviour
     [SerializeField] private Collider collider;
     [SerializeField] private XRGrabInteractable interactable;
 
+    [SerializeField] private AudioSource audioSource;
+
     private Vector3 _startScale;
     private IEnumerator _moveToPlayerRoutine;
 
@@ -58,6 +60,7 @@ public class ItemObject : MonoBehaviour
             collider.attachedRigidbody.isKinematic = true;
         
         collider.enabled = false;
+        audioSource.Play();
         MoveToPlayer(target);
     }
 
